@@ -98,24 +98,6 @@ pip install kivy
 python main.py
 ```
 
----
-
-## 📸 Telas do Sistema
-
-### Dashboard
-*(Inserir screenshot aqui)*
-
-### Cadastro de Medicamentos
-*(Inserir screenshot aqui)*
-
-### Lista de Medicamentos
-*(Inserir screenshot aqui)*
-
-### Controle de Estoque
-*(Inserir screenshot aqui)*
-
----
-
 ## 🔮 Melhorias Futuras
 
 - Notificações automáticas de horário.
