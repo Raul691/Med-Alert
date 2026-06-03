@@ -1,0 +1,142 @@
+Gerenciador:
+
+    HomeScreen:
+    MedicamentosScreen:
+    AdicionarScreen:
+    EstoqueScreen:
+
+
+<HomeScreen>:
+    name: "home"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            text: " MedAlert"
+            font_size: 30
+
+        Label:
+            text: "Medicamentos cadastrados"
+
+        Label:
+            id: total_med
+            text: "0"
+
+        Label:
+            text: "Estoque baixo"
+
+        Label:
+            id: estoque_baixo
+            text: "0"
+
+        Button:
+            text: "Medicamentos"
+            on_press:
+                app.root.current = "medicamentos"
+
+        Button:
+            text: "Adicionar"
+            on_press:
+                app.root.current = "adicionar"
+
+        Button:
+            text: "Estoque"
+            on_press:
+                app.root.current = "estoque"
+
+
+<MedicamentosScreen>:
+    name: "medicamentos"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            text: "Lista de Medicamentos"
+
+        ScrollView:
+
+            Label:
+                id: lista
+                text: ""
+                size_hint_y: None
+                height: self.texture_size[1]
+
+        Button:
+            text: "Voltar"
+            on_press:
+                app.root.current = "home"
+
+
+<AdicionarScreen>:
+    name: "adicionar"
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 10
+        padding: 10
+
+        TextInput:
+            id: nome
+            hint_text: "Nome"
+
+        TextInput:
+            id: quantidade
+            hint_text: "Quantidade"
+
+        TextInput:
+            id: horario
+            hint_text: "Horário (08:00)"
+
+        Button:
+            text: "Salvar"
+            on_press:
+                root.salvar_medicamento()
+
+        Label:
+            id: msg
+            text: ""
+
+        Button:
+            text: "Voltar"
+            on_press:
+                app.root.current = "home"
+
+
+<EstoqueScreen>:
+    name: "estoque"
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 10
+        padding: 10
+
+        Label:
+            text: "Controle de Estoque"
+
+        ScrollView:
+
+            Label:
+                id: estoque_lista
+                text: ""
+                size_hint_y: None
+                height: self.texture_size[1]
+
+        TextInput:
+            id: nome_consumo
+            hint_text: "Nome do medicamento"
+
+        Button:
+            text: "Tomei"
+            on_press:
+                root.consumir()
+
+        Label:
+            id: msg
+            text: ""
+
+        Button:
+            text: "Voltar"
+            on_press:
+                app.root.current = "home"
